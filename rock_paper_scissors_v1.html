@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <h1>Rock, Paper, Scissors</h1>
+
+        <button onclick="rock();">
+            Rock
+        </button>
+
+        <button onclick="paper();">
+            Paper
+        </button>
+
+        <button onclick="scissor();">
+            Scissor
+        </button>
+
+        <script>
+
+            function rock() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                alert(`You : Rock || Computer : Rock\nTie!`);
+                }
+
+                else if (computer == 1) {
+                    alert(`You : Rock || Computer : Paper\nYou lose!`);
+                }
+
+                else {
+                    alert(`You : Rock || Computer : Scissor\nYou win!`);
+                }
+            }
+
+            function paper() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                alert(`You : Paper || Computer : Rock\nYou win!`);
+                }
+
+                else if (computer == 1) {
+                    alert(`You : Paper || Computer : Paper\nTie!`);
+                }
+
+                else {
+                    alert(`You : Paper || Computer : Scissor\nYou lose!`);
+                }
+            }
+
+            function scissor() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                alert(`You : Scissor || Computer : Rock\nYou lose!`);
+                }
+
+                else if (computer == 1) {
+                    alert(`You : Scissor || Computer : Paper\nYou win!`);
+                }
+
+                else {
+                    alert(`You : Scissor || Computer : Scissor\nTie!`);
+                }
+            }
+
+        </script>
+    </body>
+</html>
