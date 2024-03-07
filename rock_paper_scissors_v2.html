@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <h1>Rock, Paper, Scissors</h1>
+
+        <button onclick="rock();">
+            Rock
+        </button>
+
+        <button onclick="paper();">
+            Paper
+        </button>
+
+        <button onclick="scissor();">
+            Scissor
+        </button>
+
+        <button onclick="resetScore();">
+            Reset score
+        </button>
+
+        <script>
+
+            let score = {
+                wins : 0,
+                losses : 0,
+                ties : 0
+            };
+
+            function resetScore() {
+                score.wins = 0;
+                score.losses = 0;
+                score.ties = 0;
+                alert(`Score is now reset.\nWins : 0 || Losses : 0 || Ties : 0`)
+            }
+
+            function rock() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                    score.ties += 1;
+                    alert(`You : Rock || Computer : Rock\nTie!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else if (computer == 1) {
+                    score.losses += 1;
+                    alert(`You : Rock || Computer : Paper\nYou lose!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else {
+                    score.wins += 1;
+                    alert(`You : Rock || Computer : Scissor\nYou win!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+            }
+
+            function paper() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                    score.wins += 1;
+                    alert(`You : Paper || Computer : Rock\nYou win!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else if (computer == 1) {
+                    score.ties += 1;
+                    alert(`You : Paper || Computer : Paper\nTie!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else {
+                    score.losses += 1;
+                    alert(`You : Paper || Computer : Scissor\nYou lose!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+            }
+
+            function scissor() {
+
+                let computer = Math.floor(Math.random() * 3);
+
+                if (computer == 0) {
+                    score.losses += 1;
+                    alert(`You : Scissor || Computer : Rock\nYou lose!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else if (computer == 1) {
+                    score.wins += 1;
+                    alert(`You : Scissor || Computer : Paper\nYou win!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+
+                else {
+                    score.ties += 1;
+                    alert(`You : Scissor || Computer : Scissor\nTie!\nWins : ${score.wins} || Losses : ${score.losses} || Ties : ${score.ties}`);
+                }
+            }
+
+        </script>
+    </body>
+</html>
